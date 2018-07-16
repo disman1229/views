@@ -15,7 +15,7 @@ def attribles(request):
     print(request.FILES)
     print(request.COOKIES)
     print(request.session)
-    return HttpResponse("attribles1")
+    return HttpResponse("attribles")
 
 def get1(request):
     a = request.GET.get("a")
