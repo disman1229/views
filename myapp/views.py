@@ -19,6 +19,7 @@ def attribles(request):
 
 def get1(request):
     a = request.GET.get("a")
+    b = request.GET.get("b")
 
 
 def get2(request):
