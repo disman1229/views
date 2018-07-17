@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth import logout
 
 from django.http import HttpResponse,HttpResponseRedirect
 
@@ -70,3 +71,23 @@ def redirect1(request):
     return redirect('/redirect2')
 def redirect2(request):
     return HttpResponse("我是重定向视图")
+
+
+def main(request):
+    username = request.session.get('name',"游客")
+    return render(request,'myapp/main.html',{'username':username})
+
+def login(request):
+    return render(request,'myapp/login.html')
+
+def showmain(request):
+    username = request.POST.get('username')
+    request.session['name'] = username
+    request.session.set_expiry(10)
+    return redirect('/main/')
+
+def quit(request):
+    logout(request)
+    # request.session.clear()
+    # request.session.flush()
+    return redirect('/main/')

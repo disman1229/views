@@ -11,6 +11,10 @@ urlpatterns = [
     path('cookietest/',views.cookietest),
     path('redirect1/',views.redirect1),
     path('redirect2/',views.redirect2),
+    path('main/',views.main),
+    path('login/',views.login),
+    path('showmain/',views.showmain),
+    path('quit/',views.quit)
 
 
 ]
