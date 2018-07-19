@@ -91,3 +91,6 @@ def quit(request):
     # request.session.clear()
     # request.session.flush()
     return redirect('/main/')
+
+
+
